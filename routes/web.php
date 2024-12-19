@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+use App\Http\Controllers\MapResponseController;
+
+
+
+Route::get('/map-response-test' , [MapResponseController::class , 'index']);
