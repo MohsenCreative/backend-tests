@@ -10,16 +10,16 @@ use Illuminate\Support\Facades\Storage;
 class MapResponseController extends Controller
 {
     public function index(){
-        $exchange = 'BinanceSpot';
+        $exchange = 'NobitexSpot';
 
         $exchangeNobitexResponse =json_decode(file_get_contents(storage_path('app/nobitexResponse.json')));
         $exchangeWallexResponse =json_decode(file_get_contents(storage_path('app/WallexResponse.json')));
 
 
-            $mapper = ExchangeMapperFactory::getExchangeMapper($exchange);
+        $mapper = ExchangeMapperFactory::getExchangeMapper($exchange);
 
 
-            $mappedResponse = $mapper->mapOrderResponse($exchangeWallexResponse);
+        $mappedResponse = $mapper->mapOrderResponse($exchangeNobitexResponse);
 
 
 

@@ -8,7 +8,6 @@ namespace App\Mappers\Factories;
 
 use App\Interfaces\IexchangeResponseMapper;
 use App\Mappers\NobitexSpotResponseMapper;
-use App\Mappers\WallexSpotResponseMapper;
 use Exception;
 
 class ExchangeMapperFactory{
@@ -20,7 +19,7 @@ class ExchangeMapperFactory{
 
     return match ($exchange){
         'NobitexSpot' => new NobitexSpotResponseMapper(),
-        'WallexSpot' => new WallexSpotResponseMapper(),
+        //'WallexSpot' => new WallexSpotResponseMapper(), // i.e next exchange
          default => throw new Exception("Response mapper for '$exchange' exchange not found!"),
     };
 
